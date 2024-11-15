@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-image: url('salto_angel_fondo.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            overflow-y: auto;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Cabecera con recuadro */
+        header {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 3px solid #1abc9c; /* Borde similar a las otras vistas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #1abc9c;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Barra de navegación con recuadro */
+        nav {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            top: 80px; /* Ajusta para que no se solape con la cabecera */
+            left: 0;
+            right: 0;
+            z-index: 90;
+            border-bottom: 3px solid #1abc9c; /* Borde de la barra de navegación */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1abc9c; /* Mismo color que el de la cabecera */
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db; /* Cambio de color al pasar el cursor */
+        }
+
+        /* Formulario de contacto */
+        section {
+            background: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            max-width: 1500px;
+            padding: 20px;
+            margin-top: 180px; /* Espacio para la cabecera y el menú */
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            align-self: center;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera con recuadro -->
+    <header>
+        <h1>Contacto</h1>
+    </header>
+
+    <!-- Barra de navegación con recuadro -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="tradiciones.html">Tradiciones</a></li>
+            <li><a href="datosEstadisticos.html">Datos Estadísticos</a></li>
+            <li><a href="informacionTuristica.html">Información Turística</a></li>
+            <li><a href="contenidoMultimedia.html">Contenido Multimedia</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form action="procesar_contacto.php" method="POST">
+            <h2>Formulario de Contacto</h2>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Género:</label>
+            <input type="radio" id="masculino" name="genero" value="Masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="genero" value="Femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <label for="consulta">Consulta:</label>
+            <textarea id="consulta" name="consulta" rows="4" required></textarea><br>
+
+            <label>Intereses:</label>
+            <input type="checkbox" name="intereses" value="Turismo"> Turismo
+            <input type="checkbox" name="intereses" value="Historia"> Historia
+            <input type="checkbox" name="intereses" value="Eventos"> Eventos<br>
+
+            <label for="ciudad">Ciudad de Origen:</label>
+            <select id="ciudad" name="ciudad">
+                <option value="Ciudad Bolívar">Ciudad Bolívar</option>
+                <option value="Ciudad Guayana">Ciudad Guayana</option>
+                <option value="San Félix">San Félix</option>
+                <option value="Upata">Upata</option>
+                <option value="El Callao">El Callao</option>
+                <option value="Tumeremo">Tumeremo</option>
+                <option value="Santa Elena de Uairén">Santa Elena de Uairén</option>
+                <option value="Caicara del Orinoco">Caicara del Orinoco</option>
+                <option value="La Paragua">La Paragua</option>
+                <option value="Guasipati">Guasipati</option>
+            </select><br>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Restablecer</button>
+        </form>
+    </section>
+
+    <a href="index.html">Volver a Inicio</a>
+
+</body>
+</html>
+
+
+
+
